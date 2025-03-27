@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo List App
+
+This is a simple Todo List application built with React, TanStack Query (React Query), and Axios. It allows users to fetch, add, and delete todos with optimistic updates for a smooth user experience.
+
+## Features
+- Fetch a list of todos from an API.
+- Add new todos with optimistic updates (UI updates instantly, rolls back on error).
+- Delete todos with optimistic updates.
+- Error handling and rollback for failed requests.
+
+## Prerequisites
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) (package managers)
 
 ## Getting Started
 
-First, run the development server:
-
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd todo-list-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+Install the required packages using npm or yarn:
+```bash
+npm install
+```
+or
+```bash
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Configure the API
+The app uses an external API to manage todos. Update the `API_URL` in `src/config/api.ts` to point to your API endpoint. For example:
+```typescript
+export const API_URL = "https://jsonplaceholder.typicode.com/todos";
+```
+- **Note**: The example above uses [JSONPlaceholder](https://jsonplaceholder.typicode.com/), a free fake API for testing. Replace it with your actual API if needed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run the Project
+Start the development server:
+```bash
+npm run dev
+```
+or
+```bash
+yarn dev
+```
+- The app will typically run on `http://localhost:3000` (check your terminal for the exact URL).
 
-## Learn More
+### 5. Open the App
+Open your browser and navigate to `http://localhost:3000` (or the port shown in your terminal) to see the app in action.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
