@@ -4,11 +4,22 @@ import axios from "axios";
 import { API_URL } from "@/config/api";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
+import Todo from "../types/todo";
 
-const handleError = (error: any, context: any, queryClient: any, message: string) => {
+interface MutationContext {
+  previousTodos: Todo[];
+  optimisticId?: number;
+}
+
+const handleError = (
+  error: unknown,
+  context: MutationContext | undefined,
+  queryClient: ReturnType<typeof useQueryClient>,
+  message: string
+) => {
   toast.error(`${message} ${error}`);
   if (context?.previousTodos) {
-    queryClient.setQueryData(["todos"], context.previousTodos);
+    queryClient.setQueryData<Todo[]>(["todos"], context.previousTodos);
   }
 };
 
@@ -25,7 +36,7 @@ export const useTodosData = () => {
     },
   });
   useEffect(() => {
-    !isLoading && toast.success("Todos loaded");
+    if (!isLoading) toast.success("Todos loaded");
   }, [isLoading]);
 
   return { todos, isLoading, error };

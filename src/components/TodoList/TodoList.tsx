@@ -4,6 +4,7 @@ import { useTodos } from "@/hooks/useTodos";
 import TodoItem from "./TodoItem";
 import TodoForm from "./TodoForm";
 import { AnimatePresence } from "framer-motion";
+import Todo from "../../types/todo";
 
 const TodoList = () => {
   const { todos, isLoading, error, addTodo, deleteTodo } = useTodos();

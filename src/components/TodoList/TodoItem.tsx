@@ -1,16 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Todo from "../../types/todo";
 
 interface TodoItemProps {
   todo: Todo;
   onDelete: { mutate: (id: number) => void };
 }
-
-const itemVariants = {
-  hidden: { opacity: 0, y: -10 }, // Начальное состояние (скрыто)
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }, // Анимация появления
-  exit: { opacity: 0, y: 10, transition: { duration: 0.3 } }, // Анимация удаления
-};
 
 const TodoItem = ({ todo, onDelete }: TodoItemProps) => {
   console.log(todo);
