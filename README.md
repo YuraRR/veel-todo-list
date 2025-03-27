@@ -43,6 +43,6 @@ yarn dev
 ```
 - The app will typically run on `http://localhost:3000` (check your terminal for the exact URL).
 
-### 5. Open the App
+### 4. Open the App
 Open your browser and navigate to `http://localhost:3000` (or the port shown in your terminal) to see the app in action.
 
