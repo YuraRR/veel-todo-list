@@ -31,14 +31,8 @@ or
 yarn install
 ```
 
-### 3. Configure the API
-The app uses an external API to manage todos. Update the `API_URL` in `src/config/api.ts` to point to your API endpoint. For example:
-```typescript
-export const API_URL = "https://jsonplaceholder.typicode.com/todos";
-```
-- **Note**: The example above uses [JSONPlaceholder](https://jsonplaceholder.typicode.com/), a free fake API for testing. Replace it with your actual API if needed.
 
-### 4. Run the Project
+### 3. Run the Project
 Start the development server:
 ```bash
 npm run dev
